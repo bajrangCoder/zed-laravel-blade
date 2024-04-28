@@ -4,7 +4,7 @@ description = "Larvel Blade templating language support"
 version = "0.0.1"
 schema_version = 1
 authors = ["Raunak Raj <bajrangcoders@gmail.com>"]
-repository = "https://github.com/bajrangCoder/zed-blade"
+repository = "https://github.com/bajrangCoder/zed-laravel-blade"
 
 [grammars.blade]
 repository = "https://github.com/EmranMR/tree-sitter-blade"
