@@ -1,0 +1,11 @@
+id = "blade"
+name = "Blade"
+description = "Larvel Blade templating language support"
+version = "0.0.1"
+schema_version = 1
+authors = ["Raunak Raj <bajrangcoders@gmail.com>"]
+repository = "https://github.com/bajrangCoder/zed-blade"
+
+[grammars.blade]
+repository = "https://github.com/EmranMR/tree-sitter-blade"
+commit = "1c0c868b869acffb9a72f98ac677b8d0b8182605"
