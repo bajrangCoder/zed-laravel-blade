@@ -1,6 +1,6 @@
 id = "blade"
 name = "Blade"
-description = "Larvel Blade templating language support"
+description = "Laravel Blade templating language support"
 version = "0.0.1"
 schema_version = 1
 authors = ["Raunak Raj <bajrangcoders@gmail.com>"]
