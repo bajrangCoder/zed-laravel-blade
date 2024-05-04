@@ -7,7 +7,7 @@ Laravel Blade templating language support for [Zed](https://zed.dev).
 ## Todo
 
 - [x] Basic syntax highlighting
-- [ ] LSP support
+- [ ] LSP support (I have not found any good LSP server for blade)
 
 ## Grammar
 
