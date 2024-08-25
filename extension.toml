@@ -1,11 +1,11 @@
 id = "blade"
 name = "Blade"
 description = "Laravel Blade templating language support"
-version = "0.0.2"
+version = "0.0.3"
 schema_version = 1
 authors = ["Raunak Raj <bajrangcoders@gmail.com>"]
 repository = "https://github.com/bajrangCoder/zed-laravel-blade"
 
 [grammars.blade]
 repository = "https://github.com/EmranMR/tree-sitter-blade"
-commit = "1c0c868b869acffb9a72f98ac677b8d0b8182605"
+commit = "dead019eeabe612da7fb325caf72fdc7c744d19a"

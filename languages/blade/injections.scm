@@ -1,10 +1,18 @@
 ((text) @content
-  (#set! "language" "html")
-  (#set! "combined"))
+    (#not-has-ancestor? @content "envoy")
+    (#set! "combined")
+    (#set! "language" "php"))
 
-((php_statement) @injection.content
-  (#set! injection.language php))
+((parameter) @content
+    ; (#set! "language" "php_only"))
+    (#set! "language" "php"))
 
-((php_only) @injection.content
-  (#has-ancestor? @injection.content "php_statement")
-  (#set! injection.language php))
+((php_only) @content
+    ; (#set! "language" "php_only"))
+    (#set! "language" "php"))
+
+; currently removed due to some confilict
+; ((text) @content
+;     (#has-ancestor? @content "envoy")
+;     (#set! "combined")
+;     (#set! "language" "bash"))

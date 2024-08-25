@@ -16,4 +16,19 @@ brackets = [
         "comment",
     ] },
 ]
-prettier_parser_name = "html"
+word_characters = ["$"]
+prettier_parser_name = "blade"
+scope_opt_in_language_servers = [
+    "tailwindcss-language-server",
+    "emmet-language-server",
+    "phpactor",
+]
+prettier_plugins = ["@shufo/prettier-plugin-blade"]
+
+[overrides.string]
+word_characters = ["-"]
+opt_into_language_servers = [
+    "tailwindcss-language-server",
+    "emmet-language-server",
+    "phpactor",
+]
