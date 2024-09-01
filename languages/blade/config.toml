@@ -1,6 +1,6 @@
 name = "Blade"
 grammar = "blade"
-path_suffixes = ["blade.php"]
+path_suffixes = ["*.blade.php"]
 block_comment = ["{{-- ", " --}}"]
 autoclose_before = "}])>"
 brackets = [
@@ -17,12 +17,12 @@ brackets = [
     ] },
 ]
 word_characters = ["$"]
-prettier_parser_name = "blade"
 scope_opt_in_language_servers = [
     "tailwindcss-language-server",
     "emmet-language-server",
     "phpactor",
 ]
+prettier_parser_name = "blade"
 prettier_plugins = ["@shufo/prettier-plugin-blade"]
 
 [overrides.string]
