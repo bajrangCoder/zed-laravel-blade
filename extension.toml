@@ -1,11 +1,18 @@
 id = "blade"
 name = "Blade"
 description = "Laravel Blade templating support"
-version = "0.0.3"
+version = "0.0.4"
 schema_version = 1
 authors = ["Raunak Raj <bajrangcoders@gmail.com>"]
 repository = "https://github.com/bajrangCoder/zed-laravel-blade"
 
 [grammars.blade]
 repository = "https://github.com/EmranMR/tree-sitter-blade"
-commit = "dead019eeabe612da7fb325caf72fdc7c744d19a"
+commit = "47baa7ba1f9d5f436c7a72b052d2dac2166abf92"
+
+[language_servers.emmet-language-server]
+name = "Emmet Language Server"
+language = "Blade"
+
+[language_servers.emmet-language-server.language_ids]
+"Blade" = "blade"

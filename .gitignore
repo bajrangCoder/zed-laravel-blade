@@ -1,3 +1,10 @@
 grammars
 test.blade.php
 test1.blade.php
+
+
+# Added by cargo
+
+/target
+
+extension.wasm

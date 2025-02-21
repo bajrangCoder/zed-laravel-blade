@@ -17,18 +17,10 @@ brackets = [
     ] },
 ]
 word_characters = ["$"]
-scope_opt_in_language_servers = [
-    "tailwindcss-language-server",
-    "emmet-language-server",
-    "phpactor",
-]
+scope_opt_in_language_servers = ["tailwindcss-language-server", "phpactor"]
 prettier_parser_name = "blade"
 prettier_plugins = ["@shufo/prettier-plugin-blade"]
 
 [overrides.string]
 word_characters = ["-"]
-opt_into_language_servers = [
-    "tailwindcss-language-server",
-    "emmet-language-server",
-    "phpactor",
-]
+opt_into_language_servers = ["tailwindcss-language-server", "phpactor"]
