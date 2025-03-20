@@ -22,5 +22,5 @@ prettier_parser_name = "blade"
 prettier_plugins = ["@shufo/prettier-plugin-blade"]
 
 [overrides.string]
-word_characters = ["-"]
+completion_query_characters = ["-"]
 opt_into_language_servers = ["tailwindcss-language-server", "phpactor"]
