@@ -1,7 +1,5 @@
-name = "Blade"
-grammar = "blade"
-path_suffixes = ["*.blade.php"]
-block_comment = ["{{-- ", " --}}"]
+name = "php_only"
+grammar = "php_only"
 autoclose_before = ";:.,=}])>"
 brackets = [
     { start = "{", end = "}", close = true, newline = true },
@@ -14,11 +12,4 @@ brackets = [
         "string",
     ] },
 ]
-word_characters = ["$"]
-scope_opt_in_language_servers = ["tailwindcss-language-server", "phpactor"]
-prettier_plugins = ["@shufo/prettier-plugin-blade"]
-prettier_parser_name = "blade"
-
-[overrides.string]
-completion_query_characters = ["-"]
-opt_into_language_servers = ["tailwindcss-language-server"]
+hidden = true

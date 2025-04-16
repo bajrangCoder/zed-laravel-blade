@@ -1,12 +1,10 @@
-((text) @content
-    (#not-has-ancestor? @content "envoy")
-    (#set! "combined")
-    (#set! "language" "php"))
+((text) @injection.content
+  (#set! injection.combined)
+  (#set! injection.language "php"))
 
-((parameter) @content
-    ; (#set! "language" "php_only"))
-    (#set! "language" "php"))
+((php_only) @injection.content
+    (#set! injection.language "php_only"))
 
-((php_only) @content
-    ; (#set! "language" "php_only"))
-    (#set! "language" "php"))
+((parameter) @injection.content
+    (#set! injection.include-children)
+    (#set! injection.language "php_only"))

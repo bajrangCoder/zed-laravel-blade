@@ -1,8 +1,10 @@
 (directive) @tag
 (directive_start) @tag
 (directive_end) @tag
-(bracket_start) @punctuation.bracket
-(bracket_end) @punctuation.bracket
+[
+ (bracket_start)
+ (bracket_end)
+] @punctuation.bracket
 (comment) @comment
 (attribute (directive) @attribute)
 ((bracket_start) @function (#set! "priority" 120))

@@ -1,1 +1,3 @@
-(_ "(" ")" @end) @indent
+(directive_start) @indent.begin
+
+(directive_end) @indent.end
