@@ -1,6 +1,6 @@
 name = "Blade"
 grammar = "blade"
-path_suffixes = ["*.blade.php"]
+path_suffixes = ["blade.php"]
 block_comment = ["{{-- ", " --}}"]
 autoclose_before = ";:.,=}])>"
 brackets = [
