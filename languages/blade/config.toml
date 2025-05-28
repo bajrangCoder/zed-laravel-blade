@@ -21,6 +21,7 @@ scope_opt_in_language_servers = [
     "tailwindcss-language-server",
     "emmet-language-server",
     "phpactor",
+    "intelephense"
 ]
 prettier_parser_name = "blade"
 prettier_plugins = ["@shufo/prettier-plugin-blade"]
@@ -31,4 +32,5 @@ opt_into_language_servers = [
     "tailwindcss-language-server",
     "emmet-language-server",
     "phpactor",
+    "intelephense"
 ]
