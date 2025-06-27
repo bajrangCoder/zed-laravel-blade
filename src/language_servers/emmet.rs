@@ -1,16 +1,43 @@
 use std::{env, fs};
 use zed_extension_api::{self as zed, Result};
 
-struct EmmetExtension {
+pub struct Emmet {
     did_find_server: bool,
 }
 
 const SERVER_PATH: &str = "node_modules/.bin/emmet-language-server";
 const PACKAGE_NAME: &str = "@olrtg/emmet-language-server";
 
-impl EmmetExtension {
+impl Emmet {
+    pub const LANGUAGE_SERVER_ID: &'static str = "emmet";
+
+    pub fn new() -> Self {
+        Self {
+            did_find_server: false,
+        }
+    }
+
     fn server_exists(&self) -> bool {
         fs::metadata(SERVER_PATH).map_or(false, |stat| stat.is_file())
+    }
+
+    pub fn language_server_command(
+        &mut self,
+        language_server_id: &zed::LanguageServerId,
+    ) -> Result<zed::Command> {
+        let server_path = self.server_script_path(language_server_id)?;
+        Ok(zed::Command {
+            command: zed::node_binary_path()?,
+            args: vec![
+                env::current_dir()
+                    .unwrap()
+                    .join(&server_path)
+                    .to_string_lossy()
+                    .to_string(),
+                "--stdio".to_string(),
+            ],
+            env: Default::default(),
+        })
     }
 
     fn server_script_path(&mut self, language_server_id: &zed::LanguageServerId) -> Result<String> {
@@ -53,33 +80,3 @@ impl EmmetExtension {
         Ok(SERVER_PATH.to_string())
     }
 }
-
-impl zed::Extension for EmmetExtension {
-    fn new() -> Self {
-        Self {
-            did_find_server: false,
-        }
-    }
-
-    fn language_server_command(
-        &mut self,
-        language_server_id: &zed::LanguageServerId,
-        _worktree: &zed::Worktree,
-    ) -> Result<zed::Command> {
-        let server_path = self.server_script_path(language_server_id)?;
-        Ok(zed::Command {
-            command: zed::node_binary_path()?,
-            args: vec![
-                env::current_dir()
-                    .unwrap()
-                    .join(&server_path)
-                    .to_string_lossy()
-                    .to_string(),
-                "--stdio".to_string(),
-            ],
-            env: Default::default(),
-        })
-    }
-}
-
-zed::register_extension!(EmmetExtension);

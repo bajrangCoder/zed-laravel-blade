@@ -14,8 +14,7 @@ brackets = [
         "string",
     ] },
 ]
-word_characters = ["$"]
-scope_opt_in_language_servers = ["tailwindcss-language-server", "phpactor"]
+scope_opt_in_language_servers = ["tailwindcss-language-server"]
 prettier_plugins = ["@shufo/prettier-plugin-blade"]
 prettier_parser_name = "blade"
 
