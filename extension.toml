@@ -1,18 +1,18 @@
 id = "blade"
 name = "Blade"
 description = "Laravel Blade templating language support."
-version = "0.1.2"
+version = "0.2.0"
 schema_version = 1
 authors = ["Raunak Raj <bajrangcoders@gmail.com>"]
 repository = "https://github.com/bajrangCoder/zed-laravel-blade"
 
 [grammars.blade]
 repository = "https://github.com/EmranMR/tree-sitter-blade"
-commit = "fbe5f81b54f0f6153961824ce306ffc805134980"
+commit = "59ce5b68e288002e3aee6cf5a379bbef21adbe6c"
 
 [grammars.php_only]
 repository = "https://github.com/tree-sitter/tree-sitter-php"
-commit = "f7cf7348737d8cff1b13407a0bfedce02ee7b046"
+commit = "b2278dbac9d58b02653fe6a8530ccebc492e4ed4"
 path = "php_only"
 
 [language_servers.emmet]
