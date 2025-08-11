@@ -3,12 +3,13 @@ mod language_servers;
 use zed::CodeLabel;
 use zed_extension_api::{self as zed, serde_json, LanguageServerId, Result};
 
-use crate::language_servers::{Emmet, Intelephense, Phpactor};
+use crate::language_servers::{Emmet, Intelephense, PhpTools, Phpactor};
 
 struct BladeExtension {
     intelephense: Option<Intelephense>,
     phpactor: Option<Phpactor>,
     emmet: Option<Emmet>,
+    phptools: Option<PhpTools>,
 }
 
 impl zed::Extension for BladeExtension {
@@ -17,6 +18,7 @@ impl zed::Extension for BladeExtension {
             intelephense: None,
             phpactor: None,
             emmet: None,
+            phptools: None,
         }
     }
 
@@ -43,6 +45,10 @@ impl zed::Extension for BladeExtension {
                 let emmet = self.emmet.get_or_insert_with(Emmet::new);
                 emmet.language_server_command(language_server_id)
             }
+            PhpTools::LANGUAGE_SERVER_ID => {
+                let phptools = self.phptools.get_or_insert_with(PhpTools::new);
+                phptools.language_server_command(language_server_id, worktree)
+            }
             language_server_id => Err(format!("unknown language server: {language_server_id}")),
         }
     }
@@ -55,6 +61,12 @@ impl zed::Extension for BladeExtension {
         if language_server_id.as_ref() == Intelephense::LANGUAGE_SERVER_ID {
             if let Some(intelephense) = self.intelephense.as_mut() {
                 return intelephense.language_server_workspace_configuration(worktree);
+            }
+        }
+
+        if language_server_id.as_ref() == PhpTools::LANGUAGE_SERVER_ID {
+            if let Some(phptools) = self.phptools.as_mut() {
+                return phptools.language_server_workspace_configuration(worktree);
             }
         }
 

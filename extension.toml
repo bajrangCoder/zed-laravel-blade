@@ -1,7 +1,7 @@
 id = "blade"
 name = "Blade"
 description = "Laravel Blade templating language support."
-version = "0.2.0"
+version = "0.2.1"
 schema_version = 1
 authors = ["Raunak Raj <bajrangcoders@gmail.com>"]
 repository = "https://github.com/bajrangCoder/zed-laravel-blade"
@@ -21,6 +21,11 @@ language = "Blade"
 
 [language_servers.intelephense]
 name = "Intelephense"
+language = "Blade"
+language_ids = { Blade = "blade" }
+
+[language_servers.phptools]
+name = "PhpTools"
 language = "Blade"
 language_ids = { Blade = "blade" }
 
