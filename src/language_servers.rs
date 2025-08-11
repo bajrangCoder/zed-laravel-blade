@@ -1,7 +1,9 @@
+mod emmet;
 mod intelephense;
 mod phpactor;
-mod emmet;
+mod phptools;
 
+pub use emmet::*;
 pub use intelephense::*;
 pub use phpactor::*;
-pub use emmet::*;
+pub use phptools::*;
