@@ -8,7 +8,7 @@ repository = "https://github.com/bajrangCoder/zed-laravel-blade"
 
 [grammars.blade]
 repository = "https://github.com/EmranMR/tree-sitter-blade"
-commit = "59ce5b68e288002e3aee6cf5a379bbef21adbe6c"
+commit = "cc764dadcbbceb3f259396fef66f970c72e94f96"
 
 [grammars.php_only]
 repository = "https://github.com/tree-sitter/tree-sitter-php"
