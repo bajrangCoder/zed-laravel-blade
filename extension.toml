@@ -1,7 +1,7 @@
 id = "blade"
 name = "Blade"
 description = "Laravel Blade templating language support."
-version = "0.2.1"
+version = "0.2.2"
 schema_version = 1
 authors = ["Raunak Raj <bajrangcoders@gmail.com>"]
 repository = "https://github.com/bajrangCoder/zed-laravel-blade"
