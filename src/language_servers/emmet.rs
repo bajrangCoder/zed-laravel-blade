@@ -5,7 +5,7 @@ pub struct Emmet {
     did_find_server: bool,
 }
 
-const SERVER_PATH: &str = "node_modules/.bin/emmet-language-server";
+const SERVER_PATH: &str = "node_modules/@olrtg/emmet-language-server/dist/index.js";
 const PACKAGE_NAME: &str = "@olrtg/emmet-language-server";
 
 impl Emmet {
@@ -64,8 +64,8 @@ impl Emmet {
                 Ok(()) => {
                     if !self.server_exists() {
                         Err(format!(
-                            "installed package '{PACKAGE_NAME}' did not contain expected path '{SERVER_PATH}'",
-                        ))?;
+                                "installed package '{PACKAGE_NAME}' did not contain expected path '{SERVER_PATH}'",
+                            ))?;
                     }
                 }
                 Err(error) => {
