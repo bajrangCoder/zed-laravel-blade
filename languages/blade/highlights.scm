@@ -20,11 +20,11 @@
 ] @punctuation.bracket.html
 
 ; blade
-(directive) @tag
-(directive_start) @tag
-(directive_end) @tag
+(directive) @function
+(directive_start) @function
+(directive_end) @function
 (comment) @comment
-(attribute (directive) @attribute)
+(attribute (directive) @function)
 (keyword) @function
 [
   "{{"
