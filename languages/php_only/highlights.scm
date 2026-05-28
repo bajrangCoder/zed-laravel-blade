@@ -54,10 +54,8 @@
   "return"
   "exit"
   "yield"
+  "yield from"
 ] @keyword.return
-
-(yield_expression
-  "from" @keyword.return)
 
 [
   "case"
@@ -107,7 +105,7 @@
 
 [
   (php_tag)
-  "?>"
+  (php_end_tag)
   "("
   ")"
   "["
