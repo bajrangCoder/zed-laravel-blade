@@ -34,10 +34,9 @@ impl PhpTools {
         let server_path = self.server_script_path(language_server_id)?;
         Ok(zed::Command {
             command: server_path,
-            args: vec![
-                "--composerNodes".into(),
-                "false".into(), // disable /vendor/ caching
-            ],
+            // Keep the server's default Composer package cache enabled. Disabling it causes
+            // each Blade worktree process to re-parse and retain the entire vendor graph.
+            args: vec![],
             env: Default::default(),
         })
     }

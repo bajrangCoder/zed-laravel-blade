@@ -68,6 +68,7 @@ The extension provides these language servers (at least one must be enabled in Z
 
 | Server | Description |
 |---|---|
+| **PHPantom** | Fast Rust-based PHP language server with native Blade preprocessing |
 | **Intelephense** | PHP intelligence — autocompletion, go-to-definition, diagnostics |
 | **PhpTools** | DEVSENSE PHP Tools — commercial alternative to Intelephense |
 | **Phpactor** | Open-source PHP language server |

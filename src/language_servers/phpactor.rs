@@ -2,8 +2,6 @@ use std::fs;
 
 use zed_extension_api::{self as zed, LanguageServerId, Result};
 
-// Some of the code are based on PHP extension.
-
 pub struct Phpactor {
     cached_binary_path: Option<String>,
 }

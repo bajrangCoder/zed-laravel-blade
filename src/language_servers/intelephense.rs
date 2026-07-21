@@ -7,8 +7,6 @@ use zed_extension_api::{self as zed, serde_json, LanguageServerId, Result};
 const SERVER_PATH: &str = "node_modules/intelephense/lib/intelephense.js";
 const PACKAGE_NAME: &str = "intelephense";
 
-// Some of the code are based on PHP extension.
-
 pub struct Intelephense {
     did_find_server: bool,
 }

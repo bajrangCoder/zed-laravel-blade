@@ -5,13 +5,14 @@ use std::fs;
 use zed::CodeLabel;
 use zed_extension_api::{self as zed, serde_json, LanguageServerId, Result};
 
-use crate::language_servers::{Emmet, Intelephense, PhpTools, Phpactor};
+use crate::language_servers::{Emmet, Intelephense, PhpTools, Phpactor, Phpantom};
 
 struct BladeExtension {
     intelephense: Option<Intelephense>,
     phpactor: Option<Phpactor>,
     emmet: Option<Emmet>,
     phptools: Option<PhpTools>,
+    phpantom: Option<Phpantom>,
 }
 
 impl zed::Extension for BladeExtension {
@@ -21,6 +22,7 @@ impl zed::Extension for BladeExtension {
             phpactor: None,
             emmet: None,
             phptools: None,
+            phpantom: None,
         }
     }
 
@@ -82,6 +84,10 @@ impl zed::Extension for BladeExtension {
                         env: Default::default(),
                     })
                 }
+            }
+            Phpantom::LANGUAGE_SERVER_ID => {
+                let phpantom = self.phpantom.get_or_insert_with(Phpantom::new);
+                phpantom.language_server_command(language_server_id, worktree)
             }
             language_server_id => Err(format!("unknown language server: {language_server_id}")),
         }
