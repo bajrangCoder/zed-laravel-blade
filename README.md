@@ -21,6 +21,34 @@ Laravel Blade templating language support for [Zed](https://zed.dev).
 - Tailwind CSS IntelliSense opt-in
 - Prettier support via `@shufo/prettier-plugin-blade` (currently broken — see [zed#42796](https://github.com/zed-industries/zed/issues/42796))
 
+## Tailwind CSS IntelliSense
+
+Zed's built-in Tailwind CSS language server is not attached to Blade files by default. Add the following to your Zed `settings.json` to enable Tailwind class completions in Blade templates:
+
+```json
+{
+  "languages": {
+    "Blade": {
+      "language_servers": [
+        "tailwindcss-language-server",
+        "..."
+      ]
+    }
+  },
+  "lsp": {
+    "tailwindcss-language-server": {
+      "settings": {
+        "includeLanguages": {
+          "blade": "html"
+        }
+      }
+    }
+  }
+}
+```
+
+The `"..."` entry preserves the other language servers configured for Blade.
+
 ## Formatting
 
 Install [blade-formatter](https://github.com/shufo/blade-formatter) globally:
