@@ -92,12 +92,26 @@ Optionally, create `.bladeformatterrc.json` in your project root to configure fo
 
 ## Language Servers
 
-The extension provides these language servers (at least one must be enabled in Zed settings):
+This extension does not bundle any language servers. Install version 0.5.4 or newer of the [PHP extension](https://zed.dev/extensions/php) to use PHPantom, Intelephense, PhpTools, or Phpactor in Blade files without downloading or running duplicate PHP server adapters.
 
-| Server | Description |
-|---|---|
-| **PHPantom** | Fast Rust-based PHP language server with native Blade preprocessing |
-| **Intelephense** | PHP intelligence — autocompletion, go-to-definition, diagnostics |
-| **PhpTools** | DEVSENSE PHP Tools — commercial alternative to Intelephense |
-| **Phpactor** | Open-source PHP language server |
-| **Emmet** | Emmet abbreviations support inside Blade files |
+For abbreviations, install the official [Emmet extension](https://zed.dev/extensions/emmet), which supports Blade directly.
+
+Zed enables every registered server included by `"..."`. Select one PHP server and explicitly disable the others. For example, to use Intelephense:
+
+```json
+{
+  "languages": {
+    "Blade": {
+      "language_servers": [
+        "intelephense",
+        "!phpantom",
+        "!phpactor",
+        "!phptools",
+        "..."
+      ]
+    }
+  }
+}
+```
+
+Replace `intelephense` with your preferred PHP server and adjust the disabled entries accordingly. The `"..."` entry keeps complementary servers such as Emmet, Tailwind CSS, and typo checkers enabled.

@@ -3,10 +3,3 @@ test.blade.php
 test1.blade.php
 index.blade.php
 layout.blade.php
-
-
-# Added by cargo
-
-/target
-
-extension.wasm
