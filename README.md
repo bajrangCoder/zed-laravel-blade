@@ -18,6 +18,8 @@ Laravel Blade templating language support for [Zed](https://zed.dev).
 - Language injections: PHP, JavaScript, CSS, Alpine.js, Livewire attributes
 - Auto-indentation for Blade blocks and HTML
 - Bracket matching and tag auto-close
+- Emmet abbreviations through the official [Emmet extension](https://zed.dev/extensions/emmet)
+- PHP language intelligence through the [PHP extension](https://github.com/zed-extensions/php)
 - Tailwind CSS IntelliSense opt-in
 - Prettier support via `@shufo/prettier-plugin-blade` (currently broken — see [zed#42796](https://github.com/zed-industries/zed/issues/42796))
 
@@ -92,12 +94,6 @@ Optionally, create `.bladeformatterrc.json` in your project root to configure fo
 
 ## Language Servers
 
-The extension provides these language servers (at least one must be enabled in Zed settings):
+This extension does not bundle any language servers. Install version 0.5.4 or newer of the [PHP extension](https://zed.dev/extensions/php) to use PHPantom in Blade files without downloading or running duplicate PHP server adapters.
 
-| Server | Description |
-|---|---|
-| **PHPantom** | Fast Rust-based PHP language server with native Blade preprocessing |
-| **Intelephense** | PHP intelligence — autocompletion, go-to-definition, diagnostics |
-| **PhpTools** | DEVSENSE PHP Tools — commercial alternative to Intelephense |
-| **Phpactor** | Open-source PHP language server |
-| **Emmet** | Emmet abbreviations support inside Blade files |
+For abbreviations, install the official [Emmet extension](https://zed.dev/extensions/emmet), which supports Blade directly.
