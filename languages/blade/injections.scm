@@ -9,10 +9,13 @@
 ; Use a structural (envoy (text)) match, not (#has-ancestor? …) on a
 ; global (text) capture — that predicate does not filter in Zed
 ; injection queries, so every Blade text node was treated as bash.
+; Group with @injection.host (not injection.combined): combined merges
+; every bash match in the file into one layer, so an unclosed quote in
+; one task breaks highlighting in later tasks. Host groups per envoy
+; node, while still joining {{ }} / @if gaps inside a single block.
 (envoy
-  (text) @injection.content
-  (#set! injection.combined)
-  (#set! injection.language "bash"))
+  (text) @injection.content) @injection.host
+  (#set! injection.language "bash")
 
 ; Livewire attributes
 ; <div wire:click="baz++">
