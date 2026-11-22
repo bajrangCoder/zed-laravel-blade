@@ -5,11 +5,17 @@
     (#set! injection.include-children)
     (#set! injection.language "php_only"))
 
-; Envoy body text — inject as bash for @task/@story blocks
-((text) @injection.content
-    (#has-ancestor? @injection.content "envoy")
-    (#set! injection.combined)
-    (#set! injection.language "bash"))
+; Envoy @task/@story bodies → bash.
+; Use a structural (envoy (text)) match, not (#has-ancestor? …) on a
+; global (text) capture — that predicate does not filter in Zed
+; injection queries, so every Blade text node was treated as bash.
+; Group with @injection.host (not injection.combined): combined merges
+; every bash match in the file into one layer, so an unclosed quote in
+; one task breaks highlighting in later tasks. Host groups per envoy
+; node, while still joining {{ }} / @if gaps inside a single block.
+((envoy
+  (text) @injection.content) @injection.host
+  (#set! injection.language "bash"))
 
 ; Livewire attributes
 ; <div wire:click="baz++">
