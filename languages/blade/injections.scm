@@ -13,9 +13,9 @@
 ; every bash match in the file into one layer, so an unclosed quote in
 ; one task breaks highlighting in later tasks. Host groups per envoy
 ; node, while still joining {{ }} / @if gaps inside a single block.
-(envoy
+((envoy
   (text) @injection.content) @injection.host
-  (#set! injection.language "bash")
+  (#set! injection.language "bash"))
 
 ; Livewire attributes
 ; <div wire:click="baz++">
